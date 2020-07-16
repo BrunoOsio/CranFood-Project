@@ -1,6 +1,8 @@
 package com.CranFood.domains;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,14 +16,15 @@ public class User implements Serializable{
 	private String id;
 	private String name;
 	
-	//private CreditCard userCreditCard
-	//private List<Order> order
+	private CreditCard userCreditCard;
+
+	private List<Food> order = new ArrayList<>();
 	
 	public User() {
 		super();
 	}
 
-	public User(String id, String name) {
+	public User(String id, String name, Food food) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,6 +44,15 @@ public class User implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	
+	public List<Food> getOrder() {
+		return order;
+	}
+
+	public void setOrder(List<Food> order) {
+		this.order = order;
 	}
 
 	@Override

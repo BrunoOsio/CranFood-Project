@@ -2,20 +2,20 @@ package com.CranFood.domains;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Food implements Serializable{
+public class Food implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
 	private String id;
 	private String name;
 	private Double price;
-	
-	
-	
+
 	public Food() {
 		super();
 	}
@@ -75,9 +75,5 @@ public class Food implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-	
-	
 
 }
